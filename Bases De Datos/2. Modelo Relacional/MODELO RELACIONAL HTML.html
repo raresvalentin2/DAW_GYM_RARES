@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Esquema Relacional - Gimnasio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .table-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .table-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2b6cb0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 10px;
+        }
+        .technical-format {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .norm-box {
+            padding: 15px;
+            background: #f0f7ff;
+            border-left: 4px solid #4299e1;
+            font-size: 0.95rem;
+        }
+        .norm-tag { font-weight: bold; color: #2b6cb0; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Diseño Lógico y Normalización</h1>
+        <p>Transformación del Modelo E-R al Modelo Relacional (3FN)</p>
+    </div>
+
+    <div class="table-card">
+        <span class="table-title">Personas</span>
+        <div class="technical-format">
+            PERSONAS (DNI, Nombre, Apellido, Telefono, Email, Fecha_Alta, Estado)<br>
+            PK: DNI<br>
+            UNIQUE: Email<br>
+            NOT NULL: Nombre, Apellido, Telefono, Fecha_Alta, Estado
+        </div>
+        <div class="norm-box">
+            <span class="norm-tag">¿Está en 3FN?</span> <strong>Sí.</strong> Todos los datos personales dependen directamente del DNI. No hay datos que dependan de otros que no sean la llave principal.
+        </div>
+    </div>
+
+    <div class="table-card">
+        <span class="table-title">Socios</span>
+        <div class="technical-format">
+            SOCIOS (DNI, Tipo_Plan)<br>
+            PK: DNI<br>
+            FK: DNI REFERENCES PERSONAS(DNI) ON UPDATE CASCADE ON DELETE RESTRICT<br>
+            NOT NULL: Tipo_Plan
+        </div>
+        <div class="norm-box">
+            <span class="norm-tag">¿Está en 3FN?</span> <strong>Sí.</strong> Al separar los datos de Socio de la tabla general, evitamos huecos vacíos y cada dato depende solo del DNI.
+        </div>
+    </div>
+
+    <div class="table-card">
+        <span class="table-title">Entrenadores</span>
+        <div class="technical-format">
+            ENTRENADORES (DNI, Tipo_Contrato)<br>
+            PK: DNI<br>
+            FK: DNI REFERENCES PERSONAS(DNI) ON UPDATE CASCADE ON DELETE RESTRICT<br>
+            NOT NULL: Tipo_Contrato
+        </div>
+        <div class="norm-box">
+            <span class="norm-tag">¿Está en 3FN?</span> <strong>Sí.</strong> El contrato depende exclusivamente del DNI del entrenador.
+        </div>
+    </div>
+
+    <div class="table-card">
+        <span class="table-title">Salas</span>
+        <div class="technical-format">
+            SALAS (Nombre_Sala, Metros_Cuadrados, Aforo_Maximo)<br>
+            PK: Nombre_Sala<br>
+            NOT NULL: Metros_Cuadrados, Aforo_Maximo
+        </div>
+        <div class="norm-box">
+            <span class="norm-tag">¿Está en 3FN?</span> <strong>Sí.</strong> He quitado la "lista de actividades" para que cada campo tenga un solo valor. Ahora los metros y el aforo dependen solo del nombre de la sala.
+        </div>
+    </div>
+
+    <div class="table-card">
+        <span class="table-title">Maquinaria</span>
+        <div class="technical-format">
+            MAQUINARIA (Num_Serie, Tipo, Marca, Fecha_Compra, Fecha_Ult_Mant, Estado, Nombre_Sala)<br>
+            PK: Num_Serie<br>
+            FK: Nombre_Sala REFERENCES SALAS(Nombre_Sala) ON UPDATE CASCADE ON DELETE RESTRICT<br>
+            NOT NULL: Tipo, Marca, Fecha_Compra, Estado, Nombre_Sala
+        </div>
+        <div class="norm-box">
+            <span class="norm-tag">¿Está en 3FN?</span> <strong>Sí.</strong> Cada máquina se identifica por su serie y el resto de info (marca, sala) depende solo de ese número.
+        </div>
+    </div>
+
+    <div class="table-card">
+        <span class="table-title">Actividades</span>
+        <div class="technical-format">
+            ACTIVIDADES (ID_Actividad, Nombre, Descripcion, Nivel)<br>
+            PK: ID_Actividad<br>
+            UNIQUE: Nombre<br>
+            NOT NULL: Nombre, Nivel
+        </div>
+        <div class="norm-box">
+            <span class="norm-tag">¿Está en 3FN?</span> <strong>Sí.</strong> La descripción y el nivel dependen únicamente del código de la actividad.
+        </div>
+    </div>
+
+    <div class="table-card">
+        <span class="table-title">Sesiones</span>
+        <div class="technical-format">
+            SESIONES (ID_Sesion, Fecha, Hora_Inicio, Hora_Fin, ID_Actividad, Nombre_Sala, DNI_Entrenador)<br>
+            PK: ID_Sesion<br>
+            FK1: ID_Actividad REFERENCES ACTIVIDADES(ID_Actividad) ON UPDATE CASCADE ON DELETE RESTRICT<br>
+            FK2: Nombre_Sala REFERENCES SALAS(Nombre_Sala) ON UPDATE CASCADE ON DELETE RESTRICT<br>
+            FK3: DNI_Entrenador REFERENCES ENTRENADORES(DNI) ON UPDATE CASCADE ON DELETE RESTRICT<br>
+            NOT NULL: Fecha, Hora_Inicio, Hora_Fin, ID_Actividad, Nombre_Sala, DNI_Entrenador
+        </div>
+        <div class="norm-box">
+            <span class="norm-tag">¿Está en 3FN?</span> <strong>Sí.</strong> Uso los códigos de las otras tablas para no repetir nombres. Todo depende del ID de la sesión.
+        </div>
+    </div>
+
+    <div class="table-card">
+        <span class="table-title">Reservas</span>
+        <div class="technical-format">
+            RESERVAS (DNI_Socio, ID_Sesion)<br>
+            PK: {DNI_Socio, ID_Sesion}<br>
+            FK1: DNI_Socio REFERENCES SOCIOS(DNI) ON UPDATE CASCADE ON DELETE CASCADE<br>
+            FK2: ID_Sesion REFERENCES SESIONES(ID_Sesion) ON UPDATE CASCADE ON DELETE CASCADE<br>
+            NOT NULL: DNI_Socio, ID_Sesion
+        </div>
+        <div class="norm-box">
+            <span class="norm-tag">¿Está en 3FN?</span> <strong>Sí.</strong> Es la tabla necesaria para unir socios con sesiones (muchos a muchos). No tiene datos sueltos, solo las llaves.
+        </div>
+    </div>
+
+    <div class="table-card">
+        <span class="table-title">Pagos</span>
+        <div class="technical-format">
+            PAGOS (ID_Pago, Importe, Fecha, Concepto, DNI_Socio)<br>
+            PK: ID_Pago<br>
+            FK: DNI_Socio REFERENCES SOCIOS(DNI) ON UPDATE CASCADE ON DELETE RESTRICT<br>
+            NOT NULL: Importe, Fecha, DNI_Socio
+        </div>
+        <div class="norm-box">
+            <span class="norm-tag">¿Está en 3FN?</span> <strong>Sí.</strong> El dinero y la fecha dependen solo del número de recibo (ID_Pago).
+        </div>
+    </div>
+
+</body>
+</html>

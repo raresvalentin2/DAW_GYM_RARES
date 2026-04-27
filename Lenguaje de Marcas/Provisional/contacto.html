@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Gym - Contacto</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+    <nav class="barra-top">
+        <a href="index.html" class="gym-logo">★ Fitness Gym</a>
+        <ul class="links-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="contacto.html" class="pagina-on">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrap-contacto">
+        <h2 class="titulo-seccion">Dónde estamos</h2>
+        <div class="grid-contacto">
+            <div class="datos-sitio">
+                <p><strong>Dirección:</strong> Calle Mayor 45, 28001 Madrid</p>
+                <p><strong>Email:</strong> info@fitnessgym.es</p>
+            </div>
+            <div class="mapa-fake">📍 Mapa Google Maps</div>
+        </div>
+    </div>
+
+    <div class="zona-formulario">
+        <h2 class="titulo-seccion">Contáctanos</h2>
+        <div class="caja-input">
+            <label for="f-nombre">Nombre</label>
+            <input type="text" id="f-nombre" placeholder="Tu nombre">
+            <p class="msg-error" id="err-nombre">El nombre es obligatorio</p>
+        </div>
+        <button class="boton-pro" onclick="validarTodo()">Enviar mensaje</button>
+    </div>
+
+    <script>
+        function validarTodo() {
+            var nom = document.getElementById("f-nombre").value;
+            if (nom.trim() == "") {
+                document.getElementById("err-nombre").style.display = "block";
+            } else {
+                alert("¡Recibido! Ya te diremos algo.");
+            }
+        }
+    </script>
+
+    <footer class="pie-final">
+        <p>© 2026 <span>Fitness Gym</span> — Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — FitnessGym</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">FITNESS<span>GYM</span></a>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="actividades.html">Actividades</a></li>
+    <li><a href="contacto.html" class="activo">Contacto</a></li>
+  </ul>
+  <a href="login.html" class="btn">Acceder</a>
+</nav>
+
+<section class="seccion">
+  <h2 class="seccion-titulo">Dónde <span>encontrarnos</span></h2>
+
+  <div class="dos-col">
+    <div>
+      <div class="dato">
+        <strong>Dirección</strong>
+        Calle del Deporte 14, Alcañiz (Teruel)
+      </div>
+      <div class="dato">
+        <strong>Teléfono</strong>
+        978 000 111
+      </div>
+      <div class="dato">
+        <strong>Email</strong>
+        info@fitnessgym.es
+      </div>
+      <div class="dato">
+        <strong>Horario</strong>
+        Lunes a Viernes: 6:00 – 23:00 · Fines de semana: 8:00 – 21:00
+      </div>
+
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:900;text-transform:uppercase;margin:2.5rem 0 1.5rem;">Escríbenos</h3>
+
+      <form class="formulario" action="#" method="post">
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="campo">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+        </div>
+        <div class="campo">
+          <label for="telefono">Teléfono (opcional)</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="600 000 000">
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        </div>
+        <button type="submit" class="btn">Enviar mensaje</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="mapa-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.2!2d-0.1291!3d41.0562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAzJzIyLjMiTiAwwrAwNyc0NC43Ilc!5e0!3m2!1ses!2ses!4v1"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="logo">FITNESS<span>GYM</span></a>
+  <span>© 2026 FitnessGym</span>
+</footer>
+
+</body>
+</html>

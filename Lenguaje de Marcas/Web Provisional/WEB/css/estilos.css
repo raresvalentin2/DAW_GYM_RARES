@@ -1,0 +1,236 @@
+/* FUENTES Y COLORES */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500&display=swap');
+
+:root {
+  --neon: #e5ff00;
+  --fondo: #0a0a0a;
+  --gris-caja: #1a1a1a;
+  --blanco: #ffffff;
+  --gris-texto: #888;
+}
+
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--fondo);
+  color: var(--blanco);
+}
+
+/* MENU DE NAVEGACION */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background: var(--fondo);
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--neon);
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  color: var(--gris-texto);
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+nav a:hover, nav a.activo {
+  color: var(--blanco);
+}
+
+/* BOTONES */
+.btn {
+  background: var(--neon);
+  color: #000;
+  padding: 0.7rem 1.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.btn-borde {
+  background: transparent;
+  border: 2px solid var(--blanco);
+  color: var(--blanco);
+  margin-left: 5px;
+}
+
+/* HERO / PORTADA */
+.hero {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/hero.jpg') center/cover;
+}
+
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 5rem;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.hero h1 em {
+  color: var(--neon);
+  font-style: normal;
+}
+
+.hero p {
+  margin: 1.5rem 0;
+  color: #ccc;
+  max-width: 450px;
+}
+
+/* SECCIONES */
+.seccion {
+  padding: 5rem 5%;
+}
+
+.seccion-titulo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.seccion-titulo span {
+  color: var(--neon);
+}
+
+/* GRIDS Y TARJETAS */
+.grid-info, .tarjetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.caja-info, .tarjeta {
+  background: var(--gris-caja);
+  padding: 2rem;
+  border-left: 4px solid var(--neon);
+  transition: 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.tarjeta-sala {
+  font-size: 0.8rem;
+  color: var(--neon);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.tarjeta-fila {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+  color: var(--gris-texto);
+}
+
+.tarjeta-fila strong { color: var(--blanco); }
+.verde { color: #4ade80 !important; }
+.naranja { color: #f97316 !important; }
+
+/* CONTACTO Y LOGIN */
+.dos-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.campo input, .campo textarea {
+  width: 100%;
+  padding: 1rem;
+  background: #222;
+  border: 1px solid #444;
+  color: white;
+}
+
+.campo input:focus {
+  border-color: var(--neon);
+  outline: none;
+}
+
+.mapa-wrap iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  filter: invert(90%) hue-rotate(180deg); 
+}
+
+/* LOGIN */
+.login-wrap {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-caja {
+  background: var(--gris-caja);
+  padding: 3rem;
+  width: 400px;
+  border-top: 5px solid var(--neon);
+}
+
+/* FOOTER */
+footer {
+  padding: 2rem 5%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #333;
+  color: var(--gris-texto);
+}
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Novedades FitnessGym</title>
+    <link>index.html</link>
+    <description>Ultimas novedades y avisos del gimnasio FitnessGym</description>
+    <language>es</language>
+
+    <item>
+      <title>Nuevas actividades programadas</title>
+      <link>actividades.html</link>
+      <description>Ya se pueden consultar las actividades programadas desde la pagina web.</description>
+      <pubDate>Mon, 04 May 2026 09:00:00 +0100</pubDate>
+    </item>
+
+    <item>
+      <title>Actualizacion de horarios</title>
+      <link>contacto.html</link>
+      <description>Se han actualizado los horarios de apertura del gimnasio.</description>
+      <pubDate>Mon, 11 May 2026 09:00:00 +0100</pubDate>
+    </item>
+
+    <item>
+      <title>Revision de maquinaria</title>
+      <link>index.html</link>
+      <description>Se realizaran revisiones periodicas de la maquinaria para mejorar el servicio.</description>
+      <pubDate>Mon, 18 May 2026 09:00:00 +0100</pubDate>
+    </item>
+  </channel>
+</rss>

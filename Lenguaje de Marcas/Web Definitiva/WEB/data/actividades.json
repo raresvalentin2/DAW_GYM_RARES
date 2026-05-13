@@ -1,0 +1,122 @@
+﻿[
+  {
+    "sala": "Sala 1",
+    "actividad": "Spinning",
+    "entrenadores": ["Mario Lozano"],
+    "fecha": "2026-05-05",
+    "fechaTexto": "05/05/2026",
+    "hora": "07:00h",
+    "capacidad": 20,
+    "plazasLibres": 7
+  },
+  {
+    "sala": "Sala 2",
+    "actividad": "Yoga",
+    "entrenadores": ["Laura P\u00e9rez"],
+    "fecha": "2026-05-05",
+    "fechaTexto": "05/05/2026",
+    "hora": "09:30h",
+    "capacidad": 15,
+    "plazasLibres": 3
+  },
+  {
+    "sala": "Sala 3",
+    "actividad": "Crossfit",
+    "entrenadores": ["Carlos Ruiz", "Ana G\u00f3mez"],
+    "fecha": "2026-05-05",
+    "fechaTexto": "05/05/2026",
+    "hora": "10:00h",
+    "capacidad": 25,
+    "plazasLibres": 12
+  },
+  {
+    "sala": "Sala 4",
+    "actividad": "Pilates",
+    "entrenadores": ["Marta S\u00e1nchez"],
+    "fecha": "2026-05-06",
+    "fechaTexto": "06/05/2026",
+    "hora": "11:00h",
+    "capacidad": 12,
+    "plazasLibres": 0
+  },
+  {
+    "sala": "Sala 1",
+    "actividad": "HIIT",
+    "entrenadores": ["Mario Lozano"],
+    "fecha": "2026-05-06",
+    "fechaTexto": "06/05/2026",
+    "hora": "18:00h",
+    "capacidad": 20,
+    "plazasLibres": 9
+  },
+  {
+    "sala": "Sala 2",
+    "actividad": "Zumba",
+    "entrenadores": ["Laura P\u00e9rez"],
+    "fecha": "2026-05-06",
+    "fechaTexto": "06/05/2026",
+    "hora": "19:30h",
+    "capacidad": 30,
+    "plazasLibres": 15
+  },
+  {
+    "sala": "Sala 3",
+    "actividad": "Functional Training",
+    "entrenadores": ["Carlos Ruiz"],
+    "fecha": "2026-05-07",
+    "fechaTexto": "07/05/2026",
+    "hora": "08:00h",
+    "capacidad": 20,
+    "plazasLibres": 6
+  },
+  {
+    "sala": "Sala 4",
+    "actividad": "Body Pump",
+    "entrenadores": ["Ana G\u00f3mez"],
+    "fecha": "2026-05-07",
+    "fechaTexto": "07/05/2026",
+    "hora": "10:30h",
+    "capacidad": 25,
+    "plazasLibres": 11
+  },
+  {
+    "sala": "Sala 1",
+    "actividad": "Spinning",
+    "entrenadores": ["Mario Lozano"],
+    "fecha": "2026-05-07",
+    "fechaTexto": "07/05/2026",
+    "hora": "19:00h",
+    "capacidad": 20,
+    "plazasLibres": 4
+  },
+  {
+    "sala": "Sala 2",
+    "actividad": "Meditaci\u00f3n",
+    "entrenadores": ["Marta S\u00e1nchez"],
+    "fecha": "2026-05-08",
+    "fechaTexto": "08/05/2026",
+    "hora": "09:00h",
+    "capacidad": 15,
+    "plazasLibres": 8
+  },
+  {
+    "sala": "Sala 3",
+    "actividad": "Boxeo",
+    "entrenadores": ["Carlos Ruiz"],
+    "fecha": "2026-05-08",
+    "fechaTexto": "08/05/2026",
+    "hora": "17:00h",
+    "capacidad": 16,
+    "plazasLibres": 2
+  },
+  {
+    "sala": "Sala 4",
+    "actividad": "Stretching",
+    "entrenadores": ["Laura P\u00e9rez", "Ana G\u00f3mez"],
+    "fecha": "2026-05-08",
+    "fechaTexto": "08/05/2026",
+    "hora": "20:00h",
+    "capacidad": 20,
+    "plazasLibres": 14
+  }
+]

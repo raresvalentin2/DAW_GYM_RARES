@@ -1,0 +1,35 @@
+﻿Tablas principales:
+La base de datos RARES_GYM está formada por las tablas PERSONAS, TRABAJADORES, ADMINISTRADORES, RECEPCIONISTAS, ENTRENADORES, NUTRICIONISTAS, SOCIOS, SALAS, ACTIVIDADES, MAQUINARIA, ACTIVIDADES_PROGRAMADAS, RESERVAS, PAGOS, CONSULTAS_NUTRICIONALES, PLANES_NUTRICIONALES, MEDICIONES_CORPORALES y NOMINAS.
+
+Estas tablas permiten gestionar la parte principal del gimnasio: socios, trabajadores, actividades, reservas, salas, maquinaria, pagos, nóminas y seguimiento nutricional.
+
+Normalización:
+1FN: el modelo cumple la primera forma normal porque los campos guardan valores simples y no grupos repetidos. Por ejemplo, el nombre, teléfono, fecha, importe o estado se guardan en columnas separadas.
+
+2FN: el modelo cumple la segunda forma normal porque las tablas con clave compuesta, como ENTRENADOR_ACTIVIDAD, SALA_ACTIVIDAD y ACTIVIDAD_MAQUINARIA, dependen de toda la clave primaria y no solo de una parte.
+
+3FN: el modelo cumple la tercera forma normal porque los datos están separados según su función. Los datos personales están en PERSONAS, los datos laborales en TRABAJADORES, los datos de socios en SOCIOS, y las reservas, pagos, actividades, nutrición y nóminas se gestionan en tablas independientes para evitar repetición de información.
+
+Restricciones:
+La base de datos utiliza claves primarias para identificar cada registro y claves foráneas para relacionar las tablas. También se utilizan tipos ENUM para limitar algunos valores, como el estado del socio, el tipo de contrato o el estado de la maquinaria.
+
+Además, se han añadido triggers, funciones, procedimientos y SIGNAL para controlar algunas reglas importantes del sistema, como evitar reservas de socios morosos, evitar solapamientos de horarios o controlar el cálculo de nóminas.
+
+Triggers:
+- trg_actividad_programada_insert: controla que no haya solapamientos de sala o entrenador y que la actividad sea válida.
+- trg_reserva_insert: controla las reservas de socios, el estado del socio, el pago confirmado y el aforo.
+- trg_consulta_insert: evita que un nutricionista tenga dos consultas en el mismo horario.
+- trg_trabajador_baja: evita dar de baja a un nutricionista con consultas próximas.
+
+Funciones:
+- fn_meses_mantenimiento: calcula cada cuántos meses debe revisarse una máquina.
+- fn_mantenimiento_vencido: comprueba si una máquina tiene el mantenimiento vencido.
+- fn_calcular_nomina: calcula la nómina de un trabajador según su contrato.
+
+Procedimientos:
+- sp_calcular_nominas: genera las nóminas mensuales de los trabajadores activos.
+- sp_insertar_pago: inserta un pago y controla errores básicos.
+
+Vistas:
+- vw_maquinaria_alertas: muestra el estado de mantenimiento de la maquinaria.
+- vw_actividades_web: prepara los datos de actividades programadas para poder consultarlos de forma sencilla.

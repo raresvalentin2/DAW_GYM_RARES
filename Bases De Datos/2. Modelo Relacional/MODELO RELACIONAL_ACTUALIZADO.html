@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Modelo Relacional - RARES_GYM</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  margin: 25px;
+}
+
+h1 {
+  text-align: center;
+  color: #1f4e79;
+  margin-bottom: 5px;
+}
+
+h2 {
+  color: #1f4e79;
+  border-bottom: 2px solid #1f4e79;
+  padding-bottom: 5px;
+  margin-top: 35px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.leyenda {
+  background: white;
+  border: 1px solid #bbb;
+  padding: 12px;
+  margin: 0 auto 25px auto;
+  max-width: 650px;
+  text-align: center;
+}
+
+.modelo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.tabla {
+  background: white;
+  border: 2px solid #1f4e79;
+  border-radius: 4px;
+}
+
+.tabla h3 {
+  background: #1f4e79;
+  color: white;
+  margin: 0;
+  padding: 8px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.tabla ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.tabla li {
+  padding: 3px 0;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 13px;
+}
+
+.pk {
+  color: #b00000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.fk {
+  color: #007000;
+  font-weight: bold;
+}
+
+.json {
+  color: #a05a00;
+  font-weight: bold;
+}
+
+.bloque {
+  background: white;
+  border: 1px solid #bbb;
+  padding: 15px;
+  margin-bottom: 18px;
+}
+
+.relaciones ul {
+  background: white;
+  border: 1px solid #bbb;
+  padding: 18px 35px;
+}
+
+.relaciones li {
+  margin-bottom: 7px;
+}
+
+.normalizacion p {
+  margin-top: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Modelo Relacional - RARES_GYM</h1>
+
+<p class="intro">
+Modelo relacional actualizado de la base de datos del gimnasio RARES_GYM.
+</p>
+
+<div class="leyenda">
+  <strong>Leyenda:</strong>
+  <span class="pk">PK</span> = clave primaria |
+  <span class="fk">FK</span> = clave foranea |
+  <span class="json">JSON</span> = campo JSON
+</div>
+
+<h2>Tablas</h2>
+
+<div class="modelo">
+
+  <div class="tabla">
+    <h3>PERSONAS</h3>
+    <ul>
+      <li><span class="pk">dni PK</span></li>
+      <li>nombre</li>
+      <li>apellido</li>
+      <li>telefono</li>
+      <li>email UNIQUE</li>
+      <li>password</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>SOCIOS</h3>
+    <ul>
+      <li><span class="pk">dni PK</span></li>
+      <li><span class="fk">dni FK → PERSONAS(dni)</span></li>
+      <li>fecha_alta</li>
+      <li>estado</li>
+      <li>tipo_plan</li>
+      <li><span class="json">alergias JSON</span></li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>TRABAJADORES</h3>
+    <ul>
+      <li><span class="pk">dni PK</span></li>
+      <li><span class="fk">dni FK → PERSONAS(dni)</span></li>
+      <li>fecha_alta</li>
+      <li>estado</li>
+      <li>tipo_contrato</li>
+      <li>salario_base</li>
+      <li>precio_hora</li>
+      <li>horas_mensuales</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>ADMINISTRADORES</h3>
+    <ul>
+      <li><span class="pk">dni PK</span></li>
+      <li><span class="fk">dni FK → TRABAJADORES(dni)</span></li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>RECEPCIONISTAS</h3>
+    <ul>
+      <li><span class="pk">dni PK</span></li>
+      <li><span class="fk">dni FK → TRABAJADORES(dni)</span></li>
+      <li>turno</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>ENTRENADORES</h3>
+    <ul>
+      <li><span class="pk">dni PK</span></li>
+      <li><span class="fk">dni FK → TRABAJADORES(dni)</span></li>
+      <li>especialidad</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>NUTRICIONISTAS</h3>
+    <ul>
+      <li><span class="pk">dni PK</span></li>
+      <li><span class="fk">dni FK → TRABAJADORES(dni)</span></li>
+      <li>titulacion</li>
+      <li>especialidad</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>SALAS</h3>
+    <ul>
+      <li><span class="pk">id_sala PK</span></li>
+      <li>nombre</li>
+      <li>metros_cuadrados</li>
+      <li>aforo</li>
+      <li>tipo</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>ACTIVIDADES</h3>
+    <ul>
+      <li><span class="pk">id_actividad PK</span></li>
+      <li>nombre</li>
+      <li>descripcion</li>
+      <li>nivel</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>ENTRENADOR_ACTIVIDAD</h3>
+    <ul>
+      <li><span class="pk">dni_entrenador PK</span></li>
+      <li><span class="fk">dni_entrenador FK → ENTRENADORES(dni)</span></li>
+      <li><span class="pk">id_actividad PK</span></li>
+      <li><span class="fk">id_actividad FK → ACTIVIDADES(id_actividad)</span></li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>SALA_ACTIVIDAD</h3>
+    <ul>
+      <li><span class="pk">id_sala PK</span></li>
+      <li><span class="fk">id_sala FK → SALAS(id_sala)</span></li>
+      <li><span class="pk">id_actividad PK</span></li>
+      <li><span class="fk">id_actividad FK → ACTIVIDADES(id_actividad)</span></li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>MAQUINARIA</h3>
+    <ul>
+      <li><span class="pk">id_maquina PK</span></li>
+      <li>tipo</li>
+      <li>marca</li>
+      <li>numero_serie UNIQUE</li>
+      <li>fecha_compra</li>
+      <li>fecha_ultimo_mantenimiento</li>
+      <li>estado</li>
+      <li><span class="fk">id_sala FK → SALAS(id_sala)</span></li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>ACTIVIDAD_MAQUINARIA</h3>
+    <ul>
+      <li><span class="pk">id_actividad PK</span></li>
+      <li><span class="fk">id_actividad FK → ACTIVIDADES(id_actividad)</span></li>
+      <li><span class="pk">id_maquina PK</span></li>
+      <li><span class="fk">id_maquina FK → MAQUINARIA(id_maquina)</span></li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>ACTIVIDADES_PROGRAMADAS</h3>
+    <ul>
+      <li><span class="pk">id_programada PK</span></li>
+      <li><span class="fk">id_actividad FK → ACTIVIDADES(id_actividad)</span></li>
+      <li><span class="fk">id_sala FK → SALAS(id_sala)</span></li>
+      <li><span class="fk">dni_entrenador FK → ENTRENADORES(dni)</span></li>
+      <li>fecha</li>
+      <li>hora_inicio</li>
+      <li>hora_fin</li>
+      <li>capacidad</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>RESERVAS</h3>
+    <ul>
+      <li><span class="pk">id_reserva PK</span></li>
+      <li><span class="fk">dni_socio FK → SOCIOS(dni)</span></li>
+      <li><span class="fk">id_programada FK → ACTIVIDADES_PROGRAMADAS(id_programada)</span></li>
+      <li>fecha_reserva</li>
+      <li>estado</li>
+      <li>pago_confirmado</li>
+      <li><span class="fk">id_pago FK → PAGOS(id_pago)</span></li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>PAGOS</h3>
+    <ul>
+      <li><span class="pk">id_pago PK</span></li>
+      <li><span class="fk">dni_socio FK → SOCIOS(dni)</span></li>
+      <li>fecha</li>
+      <li>importe</li>
+      <li>concepto</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>CONSULTAS_NUTRICIONALES</h3>
+    <ul>
+      <li><span class="pk">id_consulta PK</span></li>
+      <li><span class="fk">dni_socio FK → SOCIOS(dni)</span></li>
+      <li><span class="fk">dni_nutricionista FK → NUTRICIONISTAS(dni)</span></li>
+      <li>fecha</li>
+      <li>hora_inicio</li>
+      <li>hora_fin</li>
+      <li>observaciones</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>PLANES_NUTRICIONALES</h3>
+    <ul>
+      <li><span class="pk">id_plan PK</span></li>
+      <li><span class="fk">dni_socio FK → SOCIOS(dni)</span></li>
+      <li><span class="fk">dni_nutricionista FK → NUTRICIONISTAS(dni)</span></li>
+      <li>fecha_inicio</li>
+      <li>fecha_fin</li>
+      <li>objetivo</li>
+      <li><span class="json">detalle JSON</span></li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>MEDICIONES_CORPORALES</h3>
+    <ul>
+      <li><span class="pk">id_medicion PK</span></li>
+      <li><span class="fk">dni_socio FK → SOCIOS(dni)</span></li>
+      <li>fecha</li>
+      <li>peso</li>
+      <li>altura</li>
+      <li>grasa</li>
+    </ul>
+  </div>
+
+  <div class="tabla">
+    <h3>NOMINAS</h3>
+    <ul>
+      <li><span class="pk">id_nomina PK</span></li>
+      <li><span class="fk">dni_trabajador FK → TRABAJADORES(dni)</span></li>
+      <li>mes</li>
+      <li>anio</li>
+      <li>fecha</li>
+      <li>importe</li>
+    </ul>
+  </div>
+
+</div>
+
+<h2>Relaciones principales</h2>
+
+<div class="relaciones">
+  <ul>
+    <li>PERSONAS 1:1 SOCIOS</li>
+    <li>PERSONAS 1:1 TRABAJADORES</li>
+    <li>TRABAJADORES 1:1 ADMINISTRADORES</li>
+    <li>TRABAJADORES 1:1 RECEPCIONISTAS</li>
+    <li>TRABAJADORES 1:1 ENTRENADORES</li>
+    <li>TRABAJADORES 1:1 NUTRICIONISTAS</li>
+    <li>SOCIOS 1:N RESERVAS</li>
+    <li>ACTIVIDADES_PROGRAMADAS 1:N RESERVAS</li>
+    <li>SOCIOS 1:N PAGOS</li>
+    <li>TRABAJADORES 1:N NOMINAS</li>
+    <li>ENTRENADORES N:M ACTIVIDADES mediante ENTRENADOR_ACTIVIDAD</li>
+    <li>SALAS N:M ACTIVIDADES mediante SALA_ACTIVIDAD</li>
+    <li>ACTIVIDADES N:M MAQUINARIA mediante ACTIVIDAD_MAQUINARIA</li>
+    <li>ACTIVIDADES 1:N ACTIVIDADES_PROGRAMADAS</li>
+    <li>SALAS 1:N ACTIVIDADES_PROGRAMADAS</li>
+    <li>ENTRENADORES 1:N ACTIVIDADES_PROGRAMADAS</li>
+    <li>SALAS 1:N MAQUINARIA</li>
+    <li>SOCIOS 1:N CONSULTAS_NUTRICIONALES</li>
+    <li>NUTRICIONISTAS 1:N CONSULTAS_NUTRICIONALES</li>
+    <li>SOCIOS 1:N PLANES_NUTRICIONALES</li>
+    <li>NUTRICIONISTAS 1:N PLANES_NUTRICIONALES</li>
+    <li>SOCIOS 1:N MEDICIONES_CORPORALES</li>
+  </ul>
+</div>
+
+<h2>Normalizacion</h2>
+
+<div class="normalizacion">
+
+  <div class="bloque">
+    <h3>Primera Forma Normal - 1FN</h3>
+    <p>
+      El modelo cumple la primera forma normal porque cada campo guarda un solo dato.
+      Por ejemplo, el nombre, el telefono, la fecha o el importe aparecen separados en columnas distintas.
+      Las relaciones de varios a varios no se guardan como listas dentro de una tabla, sino que se crean tablas intermedias.
+    </p>
+  </div>
+
+  <div class="bloque">
+    <h3>Segunda Forma Normal - 2FN</h3>
+    <p>
+      El modelo cumple la segunda forma normal porque los atributos dependen de la clave primaria completa.
+      En las tablas con clave compuesta, como ENTRENADOR_ACTIVIDAD, SALA_ACTIVIDAD y ACTIVIDAD_MAQUINARIA,
+      no se añaden datos que dependan solo de una parte de la clave.
+    </p>
+  </div>
+
+  <div class="bloque">
+    <h3>Tercera Forma Normal - 3FN</h3>
+    <p>
+      El modelo cumple la tercera forma normal porque se evitan dependencias entre campos que no sean clave.
+      Los datos personales estan en PERSONAS, los datos comunes de empleados estan en TRABAJADORES
+      y los datos concretos de cada rol se separan en tablas como ENTRENADORES o NUTRICIONISTAS.
+      Tambien se separan reservas, pagos, actividades, maquinaria, nutricion y nominas para evitar repeticion de datos.
+    </p>
+  </div>
+
+  <div class="bloque">
+    <h3>Campos JSON</h3>
+    <p>
+      Se utilizan campos JSON de forma puntual en SOCIOS y PLANES_NUTRICIONALES.
+      En SOCIOS se usa alergias para guardar informacion sencilla y variable de cada socio.
+      En PLANES_NUTRICIONALES se usa detalle para guardar pautas del plan nutricional.
+      Se usa solo en estos casos porque pueden variar entre usuarios y no siempre tienen la misma estructura.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>

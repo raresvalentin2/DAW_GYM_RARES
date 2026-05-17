@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "sala": "Sala 1",
     "actividad": "Spinning",
@@ -12,7 +12,7 @@
   {
     "sala": "Sala 2",
     "actividad": "Yoga",
-    "entrenadores": ["Laura P\u00e9rez"],
+    "entrenadores": ["Laura Perez"],
     "fecha": "2026-05-05",
     "fechaTexto": "05/05/2026",
     "hora": "09:30h",
@@ -22,7 +22,7 @@
   {
     "sala": "Sala 3",
     "actividad": "Crossfit",
-    "entrenadores": ["Carlos Ruiz", "Ana G\u00f3mez"],
+    "entrenadores": ["Carlos Ruiz y Ana Gomez"],
     "fecha": "2026-05-05",
     "fechaTexto": "05/05/2026",
     "hora": "10:00h",
@@ -32,7 +32,7 @@
   {
     "sala": "Sala 4",
     "actividad": "Pilates",
-    "entrenadores": ["Marta S\u00e1nchez"],
+    "entrenadores": ["Marta Sanchez"],
     "fecha": "2026-05-06",
     "fechaTexto": "06/05/2026",
     "hora": "11:00h",
@@ -52,7 +52,7 @@
   {
     "sala": "Sala 2",
     "actividad": "Zumba",
-    "entrenadores": ["Laura P\u00e9rez"],
+    "entrenadores": ["Laura Perez"],
     "fecha": "2026-05-06",
     "fechaTexto": "06/05/2026",
     "hora": "19:30h",
@@ -72,7 +72,7 @@
   {
     "sala": "Sala 4",
     "actividad": "Body Pump",
-    "entrenadores": ["Ana G\u00f3mez"],
+    "entrenadores": ["Ana Gomez"],
     "fecha": "2026-05-07",
     "fechaTexto": "07/05/2026",
     "hora": "10:30h",
@@ -91,8 +91,8 @@
   },
   {
     "sala": "Sala 2",
-    "actividad": "Meditaci\u00f3n",
-    "entrenadores": ["Marta S\u00e1nchez"],
+    "actividad": "Meditacion",
+    "entrenadores": ["Marta Sanchez"],
     "fecha": "2026-05-08",
     "fechaTexto": "08/05/2026",
     "hora": "09:00h",
@@ -112,7 +112,7 @@
   {
     "sala": "Sala 4",
     "actividad": "Stretching",
-    "entrenadores": ["Laura P\u00e9rez", "Ana G\u00f3mez"],
+    "entrenadores": ["Laura Perez y Ana Gomez"],
     "fecha": "2026-05-08",
     "fechaTexto": "08/05/2026",
     "hora": "20:00h",

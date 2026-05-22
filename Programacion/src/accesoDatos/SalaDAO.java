@@ -4,6 +4,9 @@ import modelo.Sala;
 import java.util.ArrayList;
 
 // guardo salas en memoria
+/**
+ * Clase donde se guardan y manejan las salas
+ */
 public class SalaDAO {
     private ArrayList<Sala> salas = new ArrayList<Sala>();
     private int ultimoId = 3;

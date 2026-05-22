@@ -1,6 +1,9 @@
 package modelo;
 
 // actividad que se puede hacer en el gimnasio
+/**
+ * Clase para guardar una actividad del gimnasio
+ */
 public class Actividad {
     private int id;
     private String nombre;

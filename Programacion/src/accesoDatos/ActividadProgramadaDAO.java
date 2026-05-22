@@ -3,6 +3,9 @@ package accesoDatos;
 import modelo.ActividadProgramada;
 import java.util.ArrayList;
 
+/**
+ * Clase donde se guardan las actividades programadas
+ */
 public class ActividadProgramadaDAO {
     private static ArrayList<ActividadProgramada> actividades = new ArrayList<ActividadProgramada>();
     private static int ultimoId = 12;

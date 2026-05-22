@@ -8,6 +8,9 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * Pantalla para gestionar actividades programadas
+ */
 public class ActividadProgramadaVista extends JPanel {
     private ActividadProgramadaControlador controlador = new ActividadProgramadaControlador();
 

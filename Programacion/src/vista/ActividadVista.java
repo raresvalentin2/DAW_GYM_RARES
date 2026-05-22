@@ -9,6 +9,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 // pantalla sencilla para actividades
+/**
+ * Pantalla para gestionar actividades
+ */
 public class ActividadVista extends JPanel {
     private ActividadControlador controlador = new ActividadControlador();
 

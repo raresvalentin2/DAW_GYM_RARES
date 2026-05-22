@@ -1,6 +1,9 @@
 package modelo;
 
 // sala del gimnasio
+/**
+ * Clase para guardar los datos de una sala
+ */
 public class Sala {
     private int id;
     private String nombre;

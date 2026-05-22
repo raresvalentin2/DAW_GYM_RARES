@@ -5,6 +5,9 @@ import controlador.JsonControlador;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Pantalla para exportar el JSON
+ */
 public class JsonVista extends JPanel {
     private JsonControlador controlador = new JsonControlador();
 

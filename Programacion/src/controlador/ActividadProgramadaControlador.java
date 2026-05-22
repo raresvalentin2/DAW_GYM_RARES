@@ -4,6 +4,9 @@ import accesoDatos.ActividadProgramadaDAO;
 import modelo.ActividadProgramada;
 import java.util.ArrayList;
 
+/**
+ * Controlador sencillo para actividades programadas
+ */
 public class ActividadProgramadaControlador {
     private ActividadProgramadaDAO dao = new ActividadProgramadaDAO();
 

@@ -4,6 +4,9 @@ import accesoDatos.MaquinariaDAO;
 import modelo.Maquinaria;
 import java.util.ArrayList;
 
+/**
+ * Controlador sencillo para maquinaria
+ */
 public class MaquinariaControlador {
     private MaquinariaDAO dao = new MaquinariaDAO();
 

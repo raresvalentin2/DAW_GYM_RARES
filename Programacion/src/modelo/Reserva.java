@@ -1,6 +1,9 @@
 package modelo;
 
 // reserva sencilla
+/**
+ * Clase para guardar una reserva
+ */
 public class Reserva {
     private int id;
     private String dniSocio;

@@ -9,6 +9,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 // pantalla sencilla para salas
+/**
+ * Pantalla para gestionar salas
+ */
 public class SalaVista extends JPanel {
     private SalaControlador controlador = new SalaControlador();
 

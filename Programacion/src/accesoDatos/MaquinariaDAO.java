@@ -3,6 +3,9 @@ package accesoDatos;
 import modelo.Maquinaria;
 import java.util.ArrayList;
 
+/**
+ * Clase donde se guarda y maneja la maquinaria
+ */
 public class MaquinariaDAO {
     private static ArrayList<Maquinaria> maquinas = new ArrayList<Maquinaria>();
     private static int ultimoId = 3;

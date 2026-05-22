@@ -3,6 +3,9 @@ package vista;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
+/**
+ * Ventana principal de la aplicacion
+ */
 public class VentanaPrincipal extends JFrame {
     public VentanaPrincipal() {
         setTitle("RARES GYM - Gestion");

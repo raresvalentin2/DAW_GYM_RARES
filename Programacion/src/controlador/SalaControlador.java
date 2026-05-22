@@ -5,6 +5,9 @@ import modelo.Sala;
 import java.util.ArrayList;
 
 // conecta la vista de salas con los datos
+/**
+ * Controlador sencillo para salas
+ */
 public class SalaControlador {
     private SalaDAO dao = new SalaDAO();
 

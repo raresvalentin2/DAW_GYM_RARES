@@ -1,6 +1,12 @@
 package modelo;
 
 // clase base para personas del gimnasio
+/**
+ * Clase base con los datos de una persona
+ */
+/**
+ * Clase base con los datos generales de una persona
+ */
 public class Persona {
     protected String dni;
     protected String nombre;

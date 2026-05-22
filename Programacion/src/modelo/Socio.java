@@ -1,6 +1,9 @@
 package modelo;
 
 // socio del gimnasio
+/**
+ * Clase para guardar los datos de un socio
+ */
 public class Socio extends Persona {
     private String fechaAlta;
     private String estado;

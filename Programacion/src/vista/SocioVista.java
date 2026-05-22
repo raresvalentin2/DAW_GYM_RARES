@@ -9,6 +9,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 // pantalla sencilla para socios
+/**
+ * Pantalla para gestionar socios
+ */
 public class SocioVista extends JPanel {
     private SocioControlador controlador = new SocioControlador();
 

@@ -1,6 +1,9 @@
 package modelo;
 
 // pago sencillo del sistema
+/**
+ * Clase para guardar un pago
+ */
 public class Pago {
     private int id;
     private String dniSocio;

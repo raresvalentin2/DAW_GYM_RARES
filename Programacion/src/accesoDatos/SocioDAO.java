@@ -4,6 +4,9 @@ import modelo.Socio;
 import java.util.ArrayList;
 
 // guardo socios en memoria para probar el CRUD
+/**
+ * Clase donde se guardan y manejan los socios
+ */
 public class SocioDAO {
     private ArrayList<Socio> socios = new ArrayList<Socio>();
 

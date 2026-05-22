@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Clase que crea el archivo JSON para la web
+ */
 public class GeneradorJSON {
     public void generarActividades() throws IOException {
         String ruta = "Lenguaje de Marcas/Web Definitiva/WEB/data/actividades.json";

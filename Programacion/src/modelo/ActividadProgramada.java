@@ -1,5 +1,8 @@
 package modelo;
 
+/**
+ * Clase para guardar una actividad con fecha y hora
+ */
 public class ActividadProgramada {
     private int id;
     private String sala;

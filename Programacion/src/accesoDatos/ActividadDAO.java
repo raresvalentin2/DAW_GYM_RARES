@@ -4,6 +4,9 @@ import modelo.Actividad;
 import java.util.ArrayList;
 
 // guardo actividades en memoria
+/**
+ * Clase donde se guardan y manejan las actividades
+ */
 public class ActividadDAO {
     private ArrayList<Actividad> actividades = new ArrayList<Actividad>();
     private int ultimoId = 3;

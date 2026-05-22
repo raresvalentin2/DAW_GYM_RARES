@@ -8,6 +8,9 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * Pantalla para gestionar maquinaria
+ */
 public class MaquinariaVista extends JPanel {
     private MaquinariaControlador controlador = new MaquinariaControlador();
 

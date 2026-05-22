@@ -1,0 +1,15 @@
+﻿JAVADOC - PROYECTO RARES_GYM
+
+Se han añadido comentarios JavaDoc basicos en las clases principales del proyecto
+
+Carpetas usadas:
+- modelo
+- accesoDatos
+- controlador
+- vista
+
+La documentacion esta en:
+
+Entornos De Desarrollo\7. JavaDoc\docs\index.html
+
+Para verla se abre el archivo index.html en el navegador

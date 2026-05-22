@@ -1,5 +1,8 @@
 package modelo;
 
+/**
+ * Clase para guardar una maquina del gimnasio
+ */
 public class Maquinaria {
     private int id;
     private String tipo;

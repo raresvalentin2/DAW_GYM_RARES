@@ -1,3 +1,8 @@
+﻿/*
+Codigo JavaScript para cargar las actividades desde el archivo JSON
+Tambien permite filtrar por sala y fecha y navegar con paginacion
+*/
+
 // datos del json
 let datos = [];
 let datosQueSeVen = [];

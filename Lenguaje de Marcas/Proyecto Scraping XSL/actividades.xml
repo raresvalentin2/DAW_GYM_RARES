@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<actividades>
+  <actividad>
+    <capacidad>20</capacidad>
+    <nombre>Spinning</nombre>
+    <fecha>2026-05-05</fecha>
+    <entrenador>Mario Lozano</entrenador>
+    <hora>07:00h</hora>
+    <sala>Sala 1</sala>
+  </actividad>
+  <actividad>
+    <capacidad>15</capacidad>
+    <nombre>Yoga</nombre>
+    <fecha>2026-05-05</fecha>
+    <entrenador>Laura Perez</entrenador>
+    <hora>09:30h</hora>
+    <sala>Sala 2</sala>
+  </actividad>
+  <actividad>
+    <capacidad>25</capacidad>
+    <nombre>Crossfit</nombre>
+    <fecha>2026-05-05</fecha>
+    <entrenador>Carlos Ruiz y Ana Gomez</entrenador>
+    <hora>10:00h</hora>
+    <sala>Sala 3</sala>
+  </actividad>
+  <actividad>
+    <capacidad>12</capacidad>
+    <nombre>Pilates</nombre>
+    <fecha>2026-05-06</fecha>
+    <entrenador>Marta Sanchez</entrenador>
+    <hora>11:00h</hora>
+    <sala>Sala 4</sala>
+  </actividad>
+  <actividad>
+    <capacidad>20</capacidad>
+    <nombre>HIIT</nombre>
+    <fecha>2026-05-06</fecha>
+    <entrenador>Mario Lozano</entrenador>
+    <hora>18:00h</hora>
+    <sala>Sala 1</sala>
+  </actividad>
+  <actividad>
+    <capacidad>30</capacidad>
+    <nombre>Zumba</nombre>
+    <fecha>2026-05-06</fecha>
+    <entrenador>Laura Perez</entrenador>
+    <hora>19:30h</hora>
+    <sala>Sala 2</sala>
+  </actividad>
+  <actividad>
+    <capacidad>20</capacidad>
+    <nombre>Functional Training</nombre>
+    <fecha>2026-05-07</fecha>
+    <entrenador>Carlos Ruiz</entrenador>
+    <hora>08:00h</hora>
+    <sala>Sala 3</sala>
+  </actividad>
+  <actividad>
+    <capacidad>25</capacidad>
+    <nombre>Body Pump</nombre>
+    <fecha>2026-05-07</fecha>
+    <entrenador>Ana Gomez</entrenador>
+    <hora>10:30h</hora>
+    <sala>Sala 4</sala>
+  </actividad>
+  <actividad>
+    <capacidad>20</capacidad>
+    <nombre>Spinning</nombre>
+    <fecha>2026-05-07</fecha>
+    <entrenador>Mario Lozano</entrenador>
+    <hora>19:00h</hora>
+    <sala>Sala 1</sala>
+  </actividad>
+  <actividad>
+    <capacidad>15</capacidad>
+    <nombre>Meditacion</nombre>
+    <fecha>2026-05-08</fecha>
+    <entrenador>Marta Sanchez</entrenador>
+    <hora>09:00h</hora>
+    <sala>Sala 2</sala>
+  </actividad>
+  <actividad>
+    <capacidad>16</capacidad>
+    <nombre>Boxeo</nombre>
+    <fecha>2026-05-08</fecha>
+    <entrenador>Carlos Ruiz</entrenador>
+    <hora>17:00h</hora>
+    <sala>Sala 3</sala>
+  </actividad>
+  <actividad>
+    <capacidad>20</capacidad>
+    <nombre>Stretching</nombre>
+    <fecha>2026-05-08</fecha>
+    <entrenador>Laura Perez y Ana Gomez</entrenador>
+    <hora>20:00h</hora>
+    <sala>Sala 4</sala>
+  </actividad>
+</actividades>

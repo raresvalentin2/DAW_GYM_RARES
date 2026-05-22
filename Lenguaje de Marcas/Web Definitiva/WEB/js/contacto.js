@@ -1,3 +1,8 @@
+﻿/*
+Codigo JavaScript para validar el formulario de contacto
+Comprueba que los campos principales esten rellenados correctamente
+*/
+
 // validacion sencilla del formulario
 
 let formulario = document.querySelector(".formulario");
@@ -24,7 +29,7 @@ formulario.onsubmit = function(evento) {
   }
 
   if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1) {
-    aviso.innerHTML = "El email no está bien escrito.";
+    aviso.innerHTML = "El email no estÃ¡ bien escrito.";
     return;
   }
 

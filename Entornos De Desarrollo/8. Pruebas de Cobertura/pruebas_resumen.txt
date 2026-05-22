@@ -1,4 +1,4 @@
-﻿PRUEBAS DE COBERTURA - PROYECTO RARES_GYM
+﻿PRUEBAS DE COBERTURA
 
 Se han creado pruebas JUnit basicas para comprobar algunas clases del proyecto
 

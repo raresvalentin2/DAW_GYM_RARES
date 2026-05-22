@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Plan de Pruebas - RARES_GYM</title>
+<style>
+body{
+  font-family:Arial,sans-serif;
+  background:#f4f4f4;
+  color:#222;
+  margin:30px;
+  line-height:1.5;
+}
+h1{
+  color:#1f4e79;
+  text-align:center;
+}
+h2{
+  color:#1f4e79;
+  border-bottom:2px solid #1f4e79;
+  padding-bottom:5px;
+  margin-top:30px;
+}
+.bloque{
+  background:white;
+  border:1px solid #ccc;
+  padding:15px;
+  margin-bottom:18px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  margin-bottom:20px;
+}
+th{
+  background:#1f4e79;
+  color:white;
+  padding:8px;
+  text-align:left;
+}
+td{
+  border:1px solid #ccc;
+  padding:8px;
+  vertical-align:top;
+}
+</style>
+</head>
+<body>
+
+<h1>Plan de Pruebas - RARES_GYM</h1>
+
+<div class="bloque">
+<p>Este documento recoge las pruebas realizadas para comprobar el funcionamiento basico del proyecto RARES_GYM</p>
+<p>Se han usado pruebas de caja blanca con JUnit y pruebas de caja negra sobre la interfaz grafica</p>
+</div>
+
+<h2>1. Pruebas de caja blanca</h2>
+
+<div class="bloque">
+<p>Las pruebas de caja blanca se han realizado con JUnit desde Eclipse</p>
+<p>Estas pruebas comprueban partes internas del codigo, sobre todo clases del modelo y clases DAO</p>
+</div>
+
+<table>
+<tr>
+<th>Archivo</th>
+<th>Que comprueba</th>
+</tr>
+<tr>
+<td>PruebasModeloTest.java</td>
+<td>Comprueba que las clases principales guardan bien los datos</td>
+</tr>
+<tr>
+<td>PruebasDaoTest.java</td>
+<td>Comprueba listados y altas basicas en las clases DAO</td>
+</tr>
+</table>
+
+<h2>2. Pruebas realizadas con JUnit</h2>
+
+<table>
+<tr>
+<th>Prueba</th>
+<th>Resultado esperado</th>
+</tr>
+<tr>
+<td>Crear y comprobar un socio</td>
+<td>El socio guarda correctamente DNI, nombre, estado y tipo de plan</td>
+</tr>
+<tr>
+<td>Crear y comprobar una sala</td>
+<td>La sala guarda correctamente id, nombre, metros y aforo</td>
+</tr>
+<tr>
+<td>Crear y comprobar una actividad</td>
+<td>La actividad guarda correctamente id, nombre y nivel</td>
+</tr>
+<tr>
+<td>Crear y comprobar una maquina</td>
+<td>La maquina guarda correctamente id, tipo y estado</td>
+</tr>
+<tr>
+<td>Crear y comprobar una actividad programada</td>
+<td>La actividad programada guarda sala, actividad, fecha, capacidad y plazas libres</td>
+</tr>
+<tr>
+<td>Comprobar DAO</td>
+<td>Los DAO permiten listar datos y añadir registros basicos</td>
+</tr>
+</table>
+
+<h2>3. Resultado de pruebas JUnit</h2>
+
+<div class="bloque">
+<p>Las pruebas se han ejecutado desde Eclipse como JUnit Test</p>
+<p>El resultado obtenido ha sido correcto, sin errores y sin fallos</p>
+<p>Las capturas se guardan en la carpeta:</p>
+<p><strong>Entornos De Desarrollo\8. Pruebas de Cobertura\capturas</strong></p>
+</div>
+
+<h2>4. Pruebas de caja negra</h2>
+
+<div class="bloque">
+<p>Las pruebas de caja negra se realizan probando la aplicacion como usuario, sin revisar el codigo interno</p>
+</div>
+
+<table>
+<tr>
+<th>Prueba</th>
+<th>Acciones</th>
+<th>Resultado esperado</th>
+</tr>
+<tr>
+<td>Agregar socio</td>
+<td>Abrir Socios, rellenar datos y pulsar Agregar</td>
+<td>El socio aparece en la tabla</td>
+</tr>
+<tr>
+<td>Actualizar socio</td>
+<td>Seleccionar un socio, cambiar datos y pulsar Actualizar</td>
+<td>Los datos se actualizan</td>
+</tr>
+<tr>
+<td>Eliminar socio</td>
+<td>Seleccionar un socio y pulsar Eliminar</td>
+<td>El socio desaparece de la tabla</td>
+</tr>
+<tr>
+<td>Agregar sala</td>
+<td>Ir a Salas, introducir nombre, metros y aforo</td>
+<td>La sala aparece en la tabla</td>
+</tr>
+<tr>
+<td>Agregar actividad</td>
+<td>Ir a Actividades, introducir nombre, descripcion y nivel</td>
+<td>La actividad aparece en la tabla</td>
+</tr>
+<tr>
+<td>Agregar maquinaria</td>
+<td>Ir a Maquinaria, introducir tipo, marca, serie y estado</td>
+<td>La maquina aparece en la tabla</td>
+</tr>
+<tr>
+<td>Exportar JSON</td>
+<td>Ir a Exportar JSON y pulsar el boton</td>
+<td>Se genera actividades.json en la web definitiva</td>
+</tr>
+</table>
+
+<h2>5. Conclusion</h2>
+
+<div class="bloque">
+<p>Las pruebas realizadas son basicas, pero permiten comprobar que las clases principales funcionan y que la aplicacion permite realizar operaciones sencillas desde la interfaz</p>
+<p>Tambien se comprueba que el proyecto tiene una parte de pruebas automatizadas con JUnit y una parte de pruebas manuales de uso</p>
+</div>
+
+</body>
+</html>

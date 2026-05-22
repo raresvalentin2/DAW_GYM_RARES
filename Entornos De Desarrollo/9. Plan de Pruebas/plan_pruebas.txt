@@ -1,0 +1,136 @@
+﻿1. INTRODUCCION
+
+Este documento recoge las pruebas realizadas y planteadas para comprobar el funcionamiento basico del proyecto
+
+El proyecto se ha probado de dos formas:
+
+- Pruebas de caja blanca mediante JUnit
+- Pruebas de caja negra de forma manual sobre la interfaz grafica
+
+2. PRUEBAS DE CAJA BLANCA
+
+Las pruebas de caja blanca se han realizado con JUnit
+
+Estas pruebas comprueban partes internas del codigo, principalmente clases del modelo y clases DAO
+
+Archivos de prueba creados:
+
+- PruebasModeloTest.java
+- PruebasDaoTest.java
+
+Ubicacion:
+
+Programacion\test\test
+
+Pruebas realizadas en PruebasModeloTest:
+
+- Comprobar datos de un socio
+- Comprobar datos de una sala
+- Comprobar datos de una actividad
+- Comprobar datos de una maquina
+- Comprobar datos de una actividad programada
+
+Pruebas realizadas en PruebasDaoTest:
+
+- Comprobar listado de socios
+- Comprobar alta basica de socio
+- Comprobar listado de salas
+- Comprobar alta basica de sala
+- Comprobar listado de actividades
+- Comprobar alta basica de actividad
+- Comprobar listado de maquinaria
+- Comprobar alta basica de maquinaria
+- Comprobar listado de actividades programadas
+
+3. RESULTADO DE LAS PRUEBAS JUNIT
+
+Las pruebas JUnit se han ejecutado desde Eclipse
+
+Resultado obtenido:
+
+- Pruebas ejecutadas correctamente
+- Sin errores
+- Sin fallos
+
+Las capturas se encuentran en:
+
+Entornos De Desarrollo\8. Pruebas de Cobertura\capturas
+
+4. PRUEBAS DE CAJA NEGRA
+
+Las pruebas de caja negra se realizan probando la aplicacion como usuario, sin revisar el codigo interno
+
+Prueba 1 - Agregar socio
+
+Acciones:
+- Abrir la aplicacion
+- Ir a la pestaña Socios
+- Introducir DNI, nombre, apellido, telefono, email, fecha, estado y plan
+- Pulsar Agregar
+
+Resultado esperado:
+- El socio aparece en la tabla
+
+Prueba 2 - Actualizar socio
+
+Acciones:
+- Seleccionar un socio de la tabla
+- Cambiar algun dato
+- Pulsar Actualizar
+
+Resultado esperado:
+- Los datos del socio se actualizan en la tabla
+
+Prueba 3 - Eliminar socio
+
+Acciones:
+- Seleccionar un socio
+- Pulsar Eliminar
+
+Resultado esperado:
+- El socio desaparece de la tabla
+
+Prueba 4 - Agregar sala
+
+Acciones:
+- Ir a la pestaña Salas
+- Introducir nombre, metros y aforo
+- Pulsar Agregar
+
+Resultado esperado:
+- La sala aparece en la tabla
+
+Prueba 5 - Agregar actividad
+
+Acciones:
+- Ir a la pestaña Actividades
+- Introducir nombre, descripcion y nivel
+- Pulsar Agregar
+
+Resultado esperado:
+- La actividad aparece en la tabla
+
+Prueba 6 - Agregar maquinaria
+
+Acciones:
+- Ir a la pestaña Maquinaria
+- Introducir tipo, marca, numero de serie y estado
+- Pulsar Agregar
+
+Resultado esperado:
+- La maquinaria aparece en la tabla
+
+Prueba 7 - Exportar JSON
+
+Acciones:
+- Ir a la pestaña Exportar JSON
+- Pulsar el boton de exportacion
+
+Resultado esperado:
+- Se genera el archivo actividades.json en la carpeta data de la web definitiva
+
+5. CONCLUSION
+
+Las pruebas realizadas permiten comprobar que las clases principales funcionan correctamente y que las acciones basicas de la aplicacion se pueden probar desde la interfaz grafica
+
+Las pruebas no son avanzadas, pero sirven para validar el funcionamiento principal del proyecto
